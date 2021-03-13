@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>金豬年新春抽獎_翻牌DEMO</title>
+	<link href="css/main.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Ubuntu+Condensed" rel="stylesheet"
+		type="text/css">
+	<link rel="stylesheet" href="css/animate.css?20210313">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<link rel="stylesheet" href="css/card.css">
+</head>
+
+<body onLoad="getReady()">
+	<div id="container"></div>
+	<div id="topbar" style="display:none"></div><a href="https://github.com/pakastin/deck-of-cards"></a>
+	<img class="" onClick="goFresh()" id="picG" src="faces/hand.gif" />
+	<div class="divCards" id="divCards1">
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+		<div class="divCardNONE"><img class="picCards" src="faces/back2.svg" /></div>
+	</div>
+	<div class="divCards" id="divCards2"></div>
+	<div class="divCards" id="divCards3"></div>
+	<div class="divCards" id="divCards4"></div>
+	<div class="divCards" id="divCards5"></div>
+	<div class="divCards" id="divCards6"></div>
+	<div class="divCards" id="divCards7"></div>
+	<div class="divCards" id="divCards8"></div>
+	<div class="divCards" id="divCards9"></div>
+	<div class="divCards" id="divCards10"></div>
+	<div class="divCards" id="divCards11"></div>
+	<div class="divCards" id="divCards12"></div>
+
+	<audio id="myaudio" preload="auto" src="faces/show.wav">請使用支援 HTML5 Audio 的瀏覽器</audio>
+	<audio id="myaudio2" preload="auto" src="faces/Fan.mp3">請使用支援 HTML5 Audio 的瀏覽器</audio>
+
+	<div id="divBtn"></div>
+</body>
+
+</html>
+<script src="js/CanvasDraw.js"></script>
+<script src="js/myJSd.js" type="text/javascript"></script>
+<script src="js/deck.js"></script>
+<script src="js/example.js"></script>
+<script>
+	var picG = document.getElementById("picG");
+	var myaudio = document.getElementById("myaudio");
+	var myaudio2 = document.getElementById("myaudio2");
+	picG.addEventListener("animationend", function () {
+		myaudio.play();
+
+		deck.sort();
+		deck.shuffle();
+		deck.shuffle();
+		deck.fan();
+		deck.shuffle();
+		deck.shuffle(); /**/
+		deck.shuffleEND();
+	}, false);
+
+	function audioPlay() {
+		myaudio.currentTime = 0;
+		myaudio.play();
+	}
+
+	function audioPlay2() {
+		myaudio2.currentTime = 0;
+		myaudio2.play();
+	}
+</script>

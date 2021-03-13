@@ -1,0 +1,135 @@
+body {
+    background: url("../faces/BG.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #333;
+    font-family: Microsoft JhengHei;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.flexCenter {
+    display: flex;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flexCenter2 {
+    display: flex;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+#divTest {
+    width: 100%;
+    height: 100%;
+}
+
+.fancy {
+    position: relative;
+    background: rgba(145, 28, 27, 0.8);
+    padding: 50px;
+    border-radius: 60px;
+    margin-top: 0px;
+    width: 82%;
+    text-align: center;
+    border: 50px solid #FFCF77;
+    box-shadow: 3px 3px 5px 4px rgba(51, 51, 51, 0.5) inset;
+    margin-top: 3%;
+}
+
+.shadow {
+    box-shadow: -3px -3px 5px 4px rgba(51, 51, 51, 0.5) inset;
+}
+
+#slot {
+    text-align: center;
+    width: 20%;
+    border: 0px solid #000;
+    display: inline-flex;
+}
+
+.fancy .jSlots-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 220px;
+    border: 0px solid #999;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.fancy .slot li {
+    /* width: 250px; */
+    width: 100%;
+    height: 220px;
+    color: #000;
+    font-size: 1.5rem;
+    border: 0px solid rgba(153, 153, 153, 0.5);
+    margin: auto 0px;
+    background: rgba(129, 227, 252, 0);
+    color: #FFF;
+    padding: 0 !important;
+}
+
+.fancy .slot:first-child li {
+    border-left: none;
+}
+
+#picHead {
+    position: absolute;
+    width: 28%;
+    left: 4%;
+    top: 0%;
+    z-index: 10;
+    transform: translateY(-105%);
+}
+
+#picHand,
+#picHand_over {
+    width: 80px;
+}
+
+#divBtn {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: fixed;
+    right: 1%;
+    z-index: 3000;
+    opacity: 1;
+    height: 100%;
+}
+
+.btn {
+    border: solid #fff 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
+}

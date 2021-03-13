@@ -1,0 +1,122 @@
+#picG {
+    position: absolute;
+    right: calc(0%);
+    bottom: -5px;
+    height: calc(82%);
+    z-index: 200;
+}
+
+.picCards {
+    width: 100%;
+}
+
+.divCard,
+.divCardNONE {
+    width: 17%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    font-family: Microsoft JhengHei;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.divCardNONE {
+    opacity: 0;
+}
+
+.fontAward {
+    position: absolute;
+}
+
+.divCards {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    flex-wrap: wrap;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    padding: 20px;
+}
+
+.fontAward {
+    padding: 10px;
+    opacity: 0;
+}
+
+.fontGrade {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.fontPrice {
+    font-size: 1.2rem;
+    color: #D13F3F;
+}
+
+#divBtn {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: fixed;
+    right: 1%;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.btn {
+    background: #CE928A;
+    border: solid #fff 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#picDisplay {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.btnNow {
+    background: #FC0;
+}
+
+.btnOver {
+    opacity: 0.2;
+}
+
+.dCanvas {
+    z-index: 20000;
+    border: 0px #333 solid;
+}
+
+.cSketchPad {
+    z-index: 500;
+}
+
+.divOver {
+    z-index: 250;
+}

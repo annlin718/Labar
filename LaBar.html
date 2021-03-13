@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>新春加碼抽_拉霸展示</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<link href="css/main.css" rel="stylesheet">
+	<script src="js/myJSd.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/labar.css">
+</head>
+
+<body>
+	<div id="divBtn">
+		<div class="btn" onClick="setCnt(1)"><img class="btn" src="faces/1.png" /></div>
+		<div class="btn" onClick="setCnt(2)"><img class="btn" src="faces/2.png" /></div>
+		<div class="btn" onClick="setCnt(3)"><img class="btn" src="faces/3.png" /></div>
+		<div class="btn" onClick="setCnt(4)"><img class="btn" src="faces/4.png" /></div>
+		<div class="btn" onClick="setCnt(5)"><img class="btn" src="faces/5.png" /></div>
+	</div>
+
+	<div id="divTest" class="flexCenter">
+		<div id="fancy" class="fancy flexCenter">
+			<img id="picHead" src="faces/title.svg" />
+			<div id="DivOption">
+				<ul class="slot">
+					<li id="1" class="flexCenter"><img width="60%" src="faces/logo.png" /></li>
+					<!---->
+					<li class="flexCenter"><span>1</span></li>
+					<li class="flexCenter"><span>2</span></li>
+					<li class="flexCenter"><span>3</span></li>
+					<li class="flexCenter"><span>4</span></li>
+					<li class="flexCenter"><span>5</span></li>
+					<li class="flexCenter"><span>6</span></li>
+				</ul>
+			</div>
+		</div>
+		<img class="" id="picHand" src="faces/hand.svg" />
+	</div>
+	<font id="f_old"></font>
+	<font id="f_new"></font>
+	<font id="f_On">F</font>
+	<font id="f_Over">F</font>
+	<audio id="myaudio" preload="auto" src="faces/ran3.mp3">請使用支援 HTML5 Audio 的瀏覽器</audio>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.jSlots.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		getXML();
+
+		$('.fancy .slot').jSlots({
+			number: 5,
+			spinner: '#picHand',
+			easing: 'swing',
+			time: 2000,
+			loops: 1,
+			onStart: function () {
+				$('.slot').removeClass('winner');
+			},
+			onWin: function (winCount, winners) {
+				// only fires if you win
+				$.each(winners, function () {
+					this.addClass('winner');
+				});
+			}
+		});
+
+		function setCnt(cnt) {
+			if (document.getElementById("f_On").innerHTML == "T") {
+				return;
+			}
+
+			document.getElementById("f_new").innerHTML = cnt;
+			$("#fancy").empty();
+			$("#slot").empty();
+			getXML();
+
+			$('.fancy .slot').jSlots({
+				number: cnt,
+				spinner: '#picHand',
+				easing: 'swing',
+				time: 2000,
+				loops: 1,
+			});
+
+			document.getElementById("f_old").innerHTML = cnt;
+		}
+
+		function getXML() {
+			xmlDoc = GetXMLData("faces/FinalList_2021.xml");
+
+			root = xmlDoc.getElementsByTagName("Root");
+			items = root[0].getElementsByTagName("SheetInfo");
+			itemLength = items.length;
+
+			var sHTML = "";
+			sHTML += "<img id=\"picHead\" src=\"faces/title.svg\" />";
+			sHTML += "<div id=\"slot\" class=\"slot flexCenter\">";
+			sHTML += "<li class=\"flexCenter\"><img class='picLogo' width=\"60%\" src=\"faces/logo.png\" /></li>";
+			for (var i = 0; i < itemLength; i++) {
+				sHTML += "<li class=\"flexCenter\"><span>" + items[i].getElementsByTagName("Membername")[0].firstChild
+					.nodeValue.replace("/n", "<br>") + "</span></li>";
+			}
+			sHTML += "</div>";
+
+			document.getElementById("fancy").innerHTML = sHTML;
+		}
+
+		var audio = document.getElementById("myaudio");
+		audio.loop = false;
+		audio.addEventListener('ended', function () {
+			document.getElementById("f_Over").innerHTML = "T";
+		}, false);
+	</script>
+
+</body>
+
+</html>
